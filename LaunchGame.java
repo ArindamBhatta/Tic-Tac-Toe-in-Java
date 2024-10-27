@@ -1,19 +1,18 @@
 public class LaunchGame {
     public static void main(String[] args) {
-        TicTacToe t = new TicTacToe();
-        t.displayBoard();
-        HumanPlayer p1 = new HumanPlayer("Arindam", 'X');
-        ComputerPlayer p2 = new ComputerPlayer("Computer", '0');
-        PlayerInterface cp;
-        cp = p1;
+        TicTacToe game = new TicTacToe();
+        game.displayBoard();
+        HumanPlayer playerOne = new HumanPlayer("Arindam", 'X');
+        ComputerPlayer playerTwo = new ComputerPlayer("Computer", '0');
+        PlayerInterface currentPlayer;
+        currentPlayer = playerOne;
         Boolean gameOnGoing = true;
         while (gameOnGoing) {
-            System.out.println(cp.name + " turns");
-            cp.makeMove();
-            System.out.flush();
-            t.displayBoard();
+            System.out.println(currentPlayer.name + " turns");
+            currentPlayer.makeMove();
+            game.displayBoard();
             if (TicTacToe.checkColWin() || TicTacToe.checkRowWin() || TicTacToe.checkDiagonalWin()) {
-                System.out.println(cp.name + " has won");
+                System.out.println(currentPlayer.name + " has won");
                 gameOnGoing = false;
                 break;
             }
@@ -22,10 +21,10 @@ public class LaunchGame {
                 gameOnGoing = false;
                 break;
             }
-            if (cp == p1) {
-                cp = p2;
+            if (currentPlayer == playerOne) {
+                currentPlayer = playerTwo;
             } else {
-                cp = p1;
+                currentPlayer = playerOne;
             }
         }
     }

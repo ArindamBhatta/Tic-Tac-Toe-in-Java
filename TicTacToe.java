@@ -1,5 +1,5 @@
 public class TicTacToe {
-    static char[][] board; // initilise or decleared a variable
+    static char[][] board;
 
     public TicTacToe() {
         board = new char[3][3];
