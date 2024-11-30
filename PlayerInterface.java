@@ -7,6 +7,12 @@ abstract public class PlayerInterface {
         this.mark = mark;
     }
 
+    /*
+     * place move is common between two class that why we dont want to @override or
+     * implement this method that why we use final keyword final int a = 5; we can't
+     * reassgin. abstract method means we definitely implement. @override
+     */
+
     abstract void makeMove();
 
     public final boolean isValidMove(int row, int col) {

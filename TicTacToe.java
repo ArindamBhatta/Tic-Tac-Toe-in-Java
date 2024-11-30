@@ -36,7 +36,10 @@ public class TicTacToe {
         }
     }
 
-    static public boolean checkColWin() {
+    // board[0][0] == board[1][0] == board[2][0]
+    // board[0][1] == board[1][1] == board[2][1]
+    // board[0][2] == board[1][2] == board[2][2]
+    public boolean checkColWin() {
         for (int j = 0; j < 3; j++) {
             if (board[0][j] != ' ' && board[0][j] == board[1][j] && board[1][j] == board[2][j]) {
                 return true;
@@ -45,7 +48,10 @@ public class TicTacToe {
         return false;
     }
 
-    static public boolean checkRowWin() {
+    // board[0][0] == board[0][1] == board[0][2]
+    // board[1][0] == board[1][1] == board[1][2]
+    // board[2][0] == board[2][1] == board[2][2]
+    public boolean checkRowWin() {
         for (int i = 0; i < 3; i++) {
             if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
                 return true;
@@ -54,7 +60,7 @@ public class TicTacToe {
         return false;
     }
 
-    static public boolean checkDiagonalWin() {
+    public boolean checkDiagonalWin() {
         if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
             return true;
         }
@@ -64,7 +70,8 @@ public class TicTacToe {
         return false;
     }
 
-    static public boolean checkDraw() {
+    // if any cell is empty then a possible movement is their so no draw condition.
+    public boolean checkDraw() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {

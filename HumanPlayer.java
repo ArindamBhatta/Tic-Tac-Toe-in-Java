@@ -11,6 +11,10 @@ public class HumanPlayer extends PlayerInterface {
     public void makeMove() {
         int row = -1;
         int col = -1;
+
+        // as long as is isValidMove method doesn't return a true value. this while loop
+        // keep going because true value become false.
+
         do {
             System.out.println("Enter row and column");
             if (scan.hasNextInt()) {

@@ -11,12 +11,12 @@ public class LaunchGame {
             System.out.println(currentPlayer.name + " turns");
             currentPlayer.makeMove();
             game.displayBoard();
-            if (TicTacToe.checkColWin() || TicTacToe.checkRowWin() || TicTacToe.checkDiagonalWin()) {
+            if (game.checkColWin() || game.checkRowWin() || game.checkDiagonalWin()) {
                 System.out.println(currentPlayer.name + " has won");
                 gameOnGoing = false;
                 break;
             }
-            if (TicTacToe.checkDraw()) {
+            if (game.checkDraw()) {
                 System.out.println("Draw");
                 gameOnGoing = false;
                 break;
